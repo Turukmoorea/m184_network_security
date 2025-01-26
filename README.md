@@ -1,10 +1,10 @@
 # IT-Infrastruktur Dokumentation
 
-## 1. Einleitung
+## Einleitung
 
 Diese Dokumentation beschreibt die IT-Infrastruktur eines Unternehmens mit zwei Standorten und insgesamt 25 Mitarbeiterinnen und Mitarbeitern. Die vorliegende Dokumentation soll einen möglichst umfassenden Überblick über die eingesetzte Technik, die Konfiguration der Systeme sowie die festgelegten organisatorischen und sicherheitstechnischen Richtlinien geben. Gleichzeitig dient sie als Nachschlagewerk für Administratoren, Auditoren und Entscheidungsträger.
 
-### 1.1 Zusammenfassung und Ausblick
+## 1 Zusammenfassung 
 
 Die IT-Infrastruktur des Unternehmens ist durch den Aufbau zweier Standorte (Bern und Biel), einer umfassenden Cloud-Integration (TERRA Cloud), sowie klar definierten Sicherheits- und Organisationsrichtlinien auf einem hohen Niveau. Im Folgenden werden die wichtigsten Aspekte und Neuerungen zusammengefasst:
 
@@ -431,7 +431,7 @@ Die IT-Verantwortlichkeiten innerhalb der Organisation werden gemäss dem RACI-M
 - **IT-Mitarbeiter (Stellvertretung):** Walter Weiss  
   - Unterstützt den IT-Leiter und übernimmt in definierten Fällen die Rolle des Verantwortlichen (Responsible) oder der Stellvertretung (Accountable), insbesondere in Abwesenheit des IT-Leiters.
 
-## 11. Ausblick
+## 10. Ausblick
 - VLAN-Segmentierung & 802.1X: Die geplante Erweiterung der Netzwerksegmentierung wird die IT-Sicherheit weiter erhöhen und den Überblick über Zugriffe erleichtern.  
 - Port-Security: Die bereits teilweise implementierte Port-Security soll umfassender ausgerollt werden, um unautorisierte Geräteverbindungen zu verhindern.  
 - ISMS & Zertifizierungen: Die Einführung eines strukturierten ISMS (gemäss ISO 27001) ist der nächste Schritt, um die Sicherheitsprozesse zu standardisieren und zu zertifizieren.  
