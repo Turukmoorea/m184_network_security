@@ -4,18 +4,18 @@
 
 Diese Dokumentation beschreibt die IT-Infrastruktur eines Unternehmens mit zwei Standorten und insgesamt 25 Mitarbeiterinnen und Mitarbeitern. Die vorliegende Dokumentation soll einen möglichst umfassenden Überblick über die eingesetzte Technik, die Konfiguration der Systeme sowie die festgelegten organisatorischen und sicherheitstechnischen Richtlinien geben. Gleichzeitig dient sie als Nachschlagewerk für Administratoren, Auditoren und Entscheidungsträger.
 
-## 1 Zusammenfassung 
+## 1. Zusammenfassung 
 
 Die IT-Infrastruktur des Unternehmens ist durch den Aufbau zweier Standorte (Bern und Biel), einer umfassenden Cloud-Integration (TERRA Cloud), sowie klar definierten Sicherheits- und Organisationsrichtlinien auf einem hohen Niveau. Im Folgenden werden die wichtigsten Aspekte und Neuerungen zusammengefasst:
 
-#### 1.2 Infrastruktur & Hardware
+#### 1.1 Infrastruktur & Hardware
 - Zwei Standorte (Bern und Biel) plus Cloud-Anbindung**: Standortübergreifende Hochgeschwindigkeits-Vernetzung (10 Gbit/s) mit Backup-Leitung (1 Gbit/s), um Ausfälle abzufedern.  
 - Redundante Komponenten: Zugangsbeschränkte EDV-Räume, USV-Systeme zur Überbrückung kurzzeitiger Stromausfälle und strukturierte Server-Räume mit Racks.  
 - Zentrale Cloud-Umgebung: Virtuelle Server in der TERRA Cloud mit eigenem Backup-Brandabschnitt und zusätzlicher Sicherung in der Hetzner-Cloud.
 
 > siehe Kapitel: Infrastrukturübersicht; Server; Backup
 
-#### 1.3 Server, Virtualisierung & Backup
+#### 1.2 Server, Virtualisierung & Backup
 - Aktuelle Betriebssysteme: Windows Server 2022 Standard für Domänen-Controller, Datei- und Applikationsserver; Exchange Server 2019 für E-Mails.  
 - Mehrstufiges Backup-Konzept nach dem 3-2-1-Prinzip:  
   1. TERRA Cloud (Primär-Backup)  
@@ -25,7 +25,7 @@ Die IT-Infrastruktur des Unternehmens ist durch den Aufbau zweier Standorte (Ber
 
 > siehe Kapitel: Server; Backup
 
-#### 1.4 Netzwerk & Sicherheit
+#### 1.3 Netzwerk & Sicherheit
 - OPNSense-Firewalls an jedem Standort mit restriktiven Regeln und Failover-Logik für die Internetanbindung. In der Cloud-Umgebung wird eine virtuelle Securepoint-Firewall eingesetzt.  
 - WireGuard-VPN: Site-to-Site- und End-to-Site-Verbindungen (Roadwarrior) für einen sicheren Zugriff auf interne Ressourcen.  
 - Managed Unifi Switches und Access Points: Zentrales Management über Unifi-Controller, deaktivierte ungenutzte Ports, geplante Einführung von VLAN-Segmentierung (feingranular) und 802.1X für Port-Sicherheit.  
@@ -33,14 +33,14 @@ Die IT-Infrastruktur des Unternehmens ist durch den Aufbau zweier Standorte (Ber
 
 > siehe Kapitel: Netzwerk und aktive Komponenten; Organisatorische Richtlinien
 
-#### 1.5 Clients & Benutzerverwaltung
+#### 1.4 Clients & Benutzerverwaltung
 - Keine BYOD: Jeder Mitarbeitende erhält ein firmeneigenes, persönlich zugewiesenes Notebook, strikt von privaten Geräten getrennt.  
 - Active Directory: Zentrale Verwaltung von Benutzern, Gruppen und Policies. Feingranulare Rechte- und Freigaben auf dem Fileserver.  
 - Regelmässige Schulungen (Security Awareness): Schulungen zu Phishing-Erkennung, Passwort- und Datenumgang; ergänzend laufende Phishing-Simulationen mit Securepoint zum Testen der Mitarbeiter-Sensibilität.
 
 > siehe Kapitel: Benutzerverwaltung; Benutzermatrix und Berechtigungsmatrix
 
-#### 1.6 Prozesse, Compliance & Monitoring
+#### 1.5 Prozesse, Compliance & Monitoring
 - Change Management: Änderungen an Firewall-Regeln, Serverkonfigurationen oder Nutzerberechtigungen werden in einem Änderungsprotokoll dokumentiert und einem Freigabeprozess (4-Augen-Prinzip) unterzogen.  
 - Monitoring mit Zabbix: Zentrale Überwachung von Servern, Netzwerken und Firewalls mit Alarmierung bei kritischen Zuständen.  
 - ISMS in Vorbereitung: Aufbau eines Information Security Management Systems nach ISO 27001-Standards ist in Planung. Regelmässige Penetrationstests und Sicherheitsaudits sollen fortlaufend stattfinden.
