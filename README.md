@@ -58,9 +58,10 @@ Die IT-Infrastruktur des Unternehmens ist durch den Aufbau zweier Standorte (Ber
 Alle Standorte (ausgenommen Hetzner Cloud) sind mittels eines Site-to-Site VPN (WireGuard) miteinander verbunden und verfügen jeweils über eine 10 Gbit/s Internetanbindung.
 
 ### 2.2 EDV Raum und Rack
-- An jedem Standort befindet sich ein zugangsbeschränkter EDV Raum.
+- An jedem Standort befindet sich ein RFID-Badge zugangsbeschränkter EDV Raum.
+- Zugriffskontrolle erfolgt über Unifi Access Door und Unifi Controller auf dem APP-Server.
 - Es steht jeweils ein Racks zur Verfügung, in dem sich der Router, Firewall und Core Switch befinden.
-- Um einen Unterbruch durch kurze Stromausfälle zu verhindern, ist eine kleine USV im Rack verbaut.
+- Um einen Unterbruch durch kurze Stromausfälle zu verhindern, ist eine kleine USV mit Netzkarte im Rack verbaut.
 - Am Standort Bern steht zusätzlich ein NAS für Backups.
 
 ### 2.3 ISP (Internet Service Provider)
@@ -159,7 +160,7 @@ Diese Tabelle ist nicht abschliessend und zeigt den aktuellen Stand der Firewall
 ### 3.4 Access Points
 - Unifi Access Points an beiden Standorten.  
 - Zentrales Management erfolgt über den Unifi-Controller.  
-- Getrennte SSIDs für das interne Netz (WPA3-Enterprise) und Gästenetz (Captive Portal).  
+- Getrennte SSIDs für das interne Netz (EDU-intern; WPA3-Enterprise) und Gästenetz (EDU-Guest; Captive Portal).  
 - Das Captive Portal ermöglicht die Anmeldung im Gästenetz für persönliche sowie für Gästegeräte.  
 - Die Standardpasswörter der Access Points werden ersetzt und ordnungsgemäss dokumentiert.
 
@@ -205,13 +206,13 @@ Die Server werden vollständig in der TERRA Cloud gehostet. Die Backupserver bef
 
 | **Server**             | **Betriebssystem**             | **Aufgaben**                                             | **Performance**                      | **Diskaufteilung**                      | **Standort**                       |
 |------------------------|--------------------------------|---------------------------------------------------------|--------------------------------------|----------------------------------------|------------------------------------|
-| **DC1**               | Windows Server 2022 Standard  | Active Directory, DNS, DHCP, Gruppenrichtlinien         | CPU: 4 Kerne, RAM: 16 GB             | C: OS (100 GB), D: Daten (200 GB)       | TERRA Cloud                      |
-| **DC2**               | Windows Server 2022 Standard  | Active Directory, DNS, DHCP, Gruppenrichtlinien (Backup)| CPU: 4 Kerne, RAM: 16 GB             | C: OS (100 GB), D: Daten (200 GB)       | TERRA Cloud                      |
-| **Fileserver**         | Windows Server 2022 Standard  | Zentrale Dateiablage mit Freigaben                      | CPU: 8 Kerne, RAM: 32 GB             | C: OS (100 GB), D: Freigaben (2 TB)     | TERRA Cloud                      |
-| **Applikationsserver** | Windows Server 2022 Standard  | ERP, CRM, Unifi Controller, Bitwarden                   | CPU: 8 Kerne, RAM: 32 GB             | C: OS (100 GB), D: Apps (600 GB)        | TERRA Cloud                      |
-| **Mailserver**         | Exchange Server 2019          | E-Mail-Verwaltung (SMTP, IMAP, Outlook-Integration)     | CPU: 8 Kerne, RAM: 64 GB             | C: OS (100 GB), D: Exchange-Daten (1 TB) | TERRA Cloud                      |
-| **Syslog-Server**      | Ubuntu Server 24.04 LTS       | Zentralisierung der Logs von Firewalls, Switches, Servern und Clients | CPU: 4 Kerne, RAM: 8 GB              | /: OS (50 GB), /var/log (2 TB)          | TERRA Cloud                      |
-| **Backupserver**       | Ubuntu Server 24.04 LTS       | Speicherung von Veeam-Backups für geografische Redundanz | CPU: 4 Kerne, RAM: 16 GB             | /: OS (50 GB), /backup (10 TB)          | Hetzner                          |
+| **TERRA-DC01**               | Windows Server 2022 Standard  | Active Directory, DNS, DHCP, Gruppenrichtlinien         | CPU: 4 Kerne, RAM: 16 GB             | C: OS (100 GB), D: Daten (200 GB)       | TERRA Cloud                      |
+| **TERRA-DC02**               | Windows Server 2022 Standard  | Active Directory, DNS, DHCP, Gruppenrichtlinien (Backup)| CPU: 4 Kerne, RAM: 16 GB             | C: OS (100 GB), D: Daten (200 GB)       | TERRA Cloud                      |
+| **TERRA-FS01**         | Windows Server 2022 Standard  | Zentrale Dateiablage mit Freigaben                      | CPU: 8 Kerne, RAM: 32 GB             | C: OS (100 GB), D: Freigaben (2 TB)     | TERRA Cloud                      |
+| **TERRA-APP01** | Windows Server 2022 Standard  | ERP, CRM, Unifi Controller, Bitwarden                   | CPU: 8 Kerne, RAM: 32 GB             | C: OS (100 GB), D: Apps (600 GB)        | TERRA Cloud                      |
+| **TERRA-EX01**         | Exchange Server 2019          | E-Mail-Verwaltung (SMTP, IMAP, Outlook-Integration)     | CPU: 8 Kerne, RAM: 64 GB             | C: OS (100 GB), D: Exchange-Daten (1 TB) | TERRA Cloud                      |
+| **TERRA-SL01**      | Ubuntu Server 24.04 LTS       | Zentralisierung der Logs von Firewalls, Switches, Servern und Clients | CPU: 4 Kerne, RAM: 8 GB              | /: OS (50 GB), /var/log (2 TB)          | TERRA Cloud                      |
+| **HETZNER-BK01**       | Ubuntu Server 24.04 LTS       | Speicherung von Veeam-Backups für geografische Redundanz | CPU: 4 Kerne, RAM: 16 GB             | /: OS (50 GB), /backup (10 TB)          | Hetzner                          |
 
 ### 4.2 Berechtigungen
 - Active Directory wird als zentrales Benutzer- und Berechtigungsverwaltungssystem genutzt.  
@@ -430,6 +431,8 @@ Die IT-Verantwortlichkeiten innerhalb der Organisation werden gemäss dem RACI-M
   
 - **IT-Mitarbeiter (Stellvertretung):** Walter Weiss  
   - Unterstützt den IT-Leiter und übernimmt in definierten Fällen die Rolle des Verantwortlichen (Responsible) oder der Stellvertretung (Accountable), insbesondere in Abwesenheit des IT-Leiters.
+### 9.6  Prozessabläufe
+  - Die Prozessabläufe werden aktuell erarbeitet und zu einem späteren Zeitpunkt bereitgestellt.
 
 ## 10. Ausblick
 - VLAN-Segmentierung & 802.1X: Die geplante Erweiterung der Netzwerksegmentierung wird die IT-Sicherheit weiter erhöhen und den Überblick über Zugriffe erleichtern.  
