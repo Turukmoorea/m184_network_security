@@ -19,4 +19,4 @@ Dieses Dokument stellt die Version der offiziellen Dokumentation für dieses Unt
 > filelink: [IT-Infrastruktur_Dokumentation_v2](https://github.com/Turukmoorea/m184_network_security/blob/master/IT-Infrastruktur_Dokumentation_v2.md)
 
 ## **Hinweis** 
-Um weitere Formate dieser Dokuments einzusehen, navigiere zum Ordner [additional_format](https://github.com/Turukmoorea/m184_network_security/tree/master/additional_format). Das zugehörige Netzwerkdiagramm ist im Ordner [networkmap](https://github.com/Turukmoorea/m184_network_security/tree/master/networkmap) abgelegt.
+Um weitere Formate dieser Dokumente einzusehen, navigiere zum Ordner [additional_format](https://github.com/Turukmoorea/m184_network_security/tree/master/additional_format). Das, den Dateien "IT-Infrastruktur_Dokumentation_v1" und "IT-Infrastruktur_Dokumentation_v2" zugehörige Netzwerkdiagramm ist im Ordner [networkmap](https://github.com/Turukmoorea/m184_network_security/tree/master/networkmap) abgelegt.
