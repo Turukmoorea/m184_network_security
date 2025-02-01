@@ -3,12 +3,12 @@ Dieses Dokument stellt die erste Version der offiziellen Dokumentation für dies
 
 > filelink: [IT-Infrastruktur_Dokumentation_v1](https://github.com/Turukmoorea/m184_network_security/blob/master/IT-Infrastruktur_Dokumentation_v1.md)
 
-# Sicherheitsauditreport_Terry_Remo.md
+# Sicherheitsauditreport_T_R.md
 Dieses Dokument ist der Audit Report für das anderen Team.
 
 > filelink: [Sicherheitsauditreport_Terry_Remo](https://github.com/Turukmoorea/m184_network_security/blob/master/Sicherheitsauditreport_Terry_Remo.md)
 
-# Sicherheitsauditreport_Flamur_Julian.pdf
+# Sicherheitsauditreport_F_J.pdf
 Dieses Dokument enthält das Audit vom anderen Team an uns.
 
 > filelink: [Sicherheitsauditreport_Flamur_Julian](https://github.com/Turukmoorea/m184_network_security/blob/master/Sicherheitsauditreport_Flamur_Julian.pdf)
