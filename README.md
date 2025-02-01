@@ -8,10 +8,10 @@ Dieses Dokument ist der Audit Report für das anderen Team.
 
 > filelink: [Sicherheitsauditreport_Terry_Remo](https://github.com/Turukmoorea/m184_network_security/blob/master/Sicherheitsauditreport_Terry_Remo.md)
 
-# Sicherheitsauditreport_Flamur_Julian.md
+# Sicherheitsauditreport_Flamur_Julian.pdf
 Dieses Dokument enthält das Audit vom anderen Team an uns.
 
-> filelink: [Sicherheitsauditreport_Flamur_Julian](https://github.com/Turukmoorea/m184_network_security/blob/master/Sicherheitsauditreport_Flamur_Julian.md)
+> filelink: [Sicherheitsauditreport_Flamur_Julian](https://github.com/Turukmoorea/m184_network_security/blob/master/Sicherheitsauditreport_Flamur_Julian.pdf)
 
 # IT-Infrastruktur_Dokumentation_v2.md
 Dieses Dokument stellt die Version der offiziellen Dokumentation für dieses Unternehmen nach dem Sicherheitsausdit dar. Durch diese Dokumentation wird ein strukturiertes Vorgehen sichergestellt, um die Sicherheitsstandards des Unternehmens nachhaltig zu verbessern und zu dokumentieren.
